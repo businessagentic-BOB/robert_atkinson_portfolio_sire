@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Robert Atkinson | Portfolio</title>
+  <meta name="description"
+    content="Art Portfolio of Robert Atkinson featuring Graphic Design, Digital Work, 3D Fabrication, and Drawing & Painting.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/favicon-B9F4sNDz.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32-DMqO_K7w.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16-Dk_AkZEI.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon-DYAzP_Lv.png">
+  <link rel="shortcut icon" href="./assets/favicon-B9F4sNDz.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+
+  <style>
+    /* ---- Home Page Redesign ---- */
+    #home-view {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .home-hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 28px 60px 24px;
+    }
+
+    .home-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin: 0 0 16px;
+    }
+
+    .home-signature {
+      display: block;
+      width: clamp(240px, 15vw, 320px);
+      height: auto;
+      margin: 0 0 28px;
+    }
+
+    .home-divider {
+      width: 60px;
+      height: 4px;
+      background: #3b42a2;
+      margin: 0 auto 28px;
+      border-radius: 2px;
+    }
+
+    .home-bio {
+      font-size: 1.05rem;
+      color: #777;
+      max-width: 520px;
+      line-height: 1.75;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .home-categories {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 54px;
+      padding: 118px 40px 14px;
+      border-bottom: 1px solid #ebebeb;
+      background: #fff;
+    }
+
+    .home-cat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      gap: 14px;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+
+    .home-cat-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .home-cat-img {
+      height: 150px;
+      width: auto;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+      transition: filter 0.3s ease;
+    }
+
+    .home-cat-card:hover .home-cat-img {
+      filter: drop-shadow(0 12px 24px rgba(59,66,162,0.3));
+    }
+
+    .home-cat-label {
+      font-weight: 900;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #3b42a2;
+      text-align: center;
+      line-height: 1.4;
+      transition: color 0.2s ease;
+    }
+
+    .home-cat-card:hover .home-cat-label {
+      color: #2d3380;
+    }
+
+    @media (max-width: 900px) {
+      .home-categories {
+        gap: 28px;
+        padding-top: 82px;
+      }
+
+      .home-cat-img {
+        height: 120px;
+      }
+
+      .home-signature {
+        width: clamp(230px, 45vw, 300px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .home-categories {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding: 52px 20px 14px;
+      }
+
+      .home-hero {
+        padding: 24px 24px 24px;
+      }
+    }
+  </style>
+
+  <script type="module" crossorigin src="./assets/index-D1TS4bjT.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CkRAXPGG.css">
+</head>
+
+<body>
+
+  <!-- Header: single full-width blue bar, text flush top-left -->
+  <header class="header">
+    <a href="#" class="logo-group">
+      <h1 class="main-logo">robert ATKINSON</h1>
+      <div class="sub-logo">PORTFOLIO</div>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+      aria-label="Open site menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-links" id="site-nav">
+      <a href="#home" class="nav-icon" id="nav-home" title="Home">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAoCAYAAACIC2hQAAAACXBIWXMAAAsTAAALEwEAmpwYAAABl0lEQVRYhd3Yv6uOUQAH8M89vScxkEEposdoMVhuMdgsJovhWP3Kj4iUkkKRgSTkKos6WewGi8HgL5BFx4aSYnE5it56M0jd9773fe99j089y/N8z3m+z496fjBmpaad/WXc886Ma6JS01pcxYnBqnu42MX8dWqKlpr24w42/bXpPU51MT9d0aKlpq24i30LRJ/heBdzWdaipaYeTuMy1gw57Buu4GYXc5140VLTLB5gh9G8xpEu5pcTKVpqWofrODqme/sRzncxfx4mPNQOS00HcBsbjdcnnMPjLuZfIxctNW3Dfew1WS9wrIv5zaKKlpoizuISVlseP3AD17qY5xcsWmrahYfYbmW8HZzd5/8sWmpaPziiQ6bDE5zpYv74p2ip6SBuYYPp8gUXMDdTauo/+k6abjlgi+m3uV+0CUEjgkYEjQgaETQiaETQiN4Sx3/HqyGzs1i1UkU/dDHvGSZYanqH/sfg/33pg0YEjQgaETQiaETQiKARQSOCRgSNCBoRNCJoRA+HB7+5R/FzEdndS3itnP8N4rFdkxwVY9IAAAAASUVORK5CYII=" class="nav-icon-img" alt="Home">
+      </a>
+      <a href="#about" class="nav-icon" id="nav-info" title="Info">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEFklEQVRYhdVZTWsTURQ9U62LQGNBhDKIbaFxkaJ/QRdSEERQU6m2iG7UZaHr0h/QTX+ASxE7jUyz8KOYxI/uXNY2UMwwhUKqItJaKKHaXLnTmTiZvJnOm2QMHniBzLx59+TNfffec6MQEdoFRVG6ACQB9NiXdgH8JKJa22y0QlhRlH4AVwBcAnAewBCAE55p+wDKAD4BeAdgiYjMyEaZsMwAcAzAmG2cIo5lAHcBHJe2L0l21N4tatMwAYw7b7pthAGoAF63kSh5Br+twTBcjvRhRVFGADwBcDponqqqSKfTGBwcRCKRsK7t7e3BNE2USiVUKpWjvHMbwD0iykX2YdvP9v12Jp1O0+zsLJXLZToKhmFYc4eHh4N2+gDAw0guAWDCb+GhoSHSdZ1qtRrJolar0eLiIqVSqSDiD6QIA7jst7NTU1NUrVapVVSrVWutgJ2+FoqwfcC+eRfp7u4mTdOo3VhYWLDWFpD+AeBsGMIvRGQLhQLFhUKh4Ee6GEgYwHXRK+JdiBuapvm5x5iQMACuA0oin5XBysoKTU9P08zMDK2vr0s96+PTZXdGdBO+4Z3MJ1nmgG1ublIikag/n0wmaWtrK/TzbIsjkID0hIjwkncihx8ZzM/PNxnLZrNSa3C4FBD+0EAYQJ8dSuqTOMDLxtlisdhkrCB5WNkmJyQB6QE34aYkwVlJFgcHB5TJZOprZDIZ65os2LaA8CM34cfeCZxKo6JSqVgjKjjVCwg/cxP+6L6pqip1GqqqegmvMlcOZYyUuyDiqqvTSDdzSLEE67J1WK/7DpeIUTEwMMAlaX1sbGxEWkfAgaVX0hGNDXDq2U4iIebQ47jEf4MuADvei6wUOo09MYfdLj6Rtjypg2VNp2E2c/jFPQ7HJdbdd1iDdRqlZg6fORE6hLnJUQcLRsMw0CkYhiESrav84RB+772r6zo6BV1s+6316Vf8cAESRWT29/c3ZCjTNKWeZ5s+ytoqfqwdJqIvAPJeH8rlglsEcSCXy2Ftbc17eZmIDjNQUAHPxbSsQm5lh6v+Bfyd2CRSK4SnQkikhlaVoii8y8+970PTNIyOch/waMzNzWF7+29Yn5ycRG9vQ6kiRDab9bNxi7sB9W8Cmf9KJPPz+TzFhXw+7yfzl8L0Jc4A+C4iHYfc1zTNjyw3c9SwraoRb5j7x62qfW6XyTYD78fVDNR13S8aOGNcunvpIi3caUdZh223lstla66PInbv7O12NLSfAjgVc0P7qx1vi4Gzgn6N5yDG+ZdBjsuDUFzCTPJkw6bk0sJYBXBVioPMZFdGvGm3tnz9O2D8BvCSG9Yy/x6F9uEgKIrSZ3frLwK4AOCcV4HjUM2wQOCam8vYN0TE/hrNZiuEhQuytgdO2l93OEK008Af2aW4AIfAqIcAAAAASUVORK5CYII=" class="nav-icon-img" alt="Info">
+      </a>
+      <a href="#blog" class="nav-icon" id="nav-blog" title="Blog">
+        <img src="./assets/blog-RZapRfnc.png" class="nav-icon-img blog-icon-img" alt="Blog">
+      </a>
+      <a href="#contact" class="nav-icon" id="nav-contact" title="Contact">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAoCAYAAABjPNNTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF9UlEQVRYhb1ZXWhTZxh+ThKbNk1b0rRl2qagw/4sRbT4U4gFwXa7FETwD9ShlOHmvBEm9EIUtsGgaGsvJlSQWbeLXe1O5i5apTJvxFK6LjCVpXYNyTLaRvtjmr7jOeaEc5q/k2h84FByzvvznO893/vzVRERFAJFUVoBdAHoAOAF4AFQBcAKIA5gHsA0gEkAvwP4TUSmCnJGkmYvAJUAvgDwB4A1qudxrSmKMpXQr8zLr0lydgC9AMJ5EpN0l9Vq/S9hz27Gv5Ir3IqifAygH0CL/n5paSl8Ph+6u7uxfft2bNmyBW63GzabDaurq4hEInj27BmePHmCe/fuYWxsDMvLywbbGzZs+CsWi30uIr8WHG4A3wKI6ldh69atMjAwIJFIRPJBJBJR9ai/blUX6aegcAP4CcCKZszpdEpfX59Eo1F5G7x8+VKuXbsmFRUVSaIWiyVGf3mRBPAzgNeakT179sj4+Li8S0xMTIjP59MTXaVfUyQBDABY0pSPHTsmwWBQioFgMCjHjx/Xh54LM5CVJIAjABY0pZMnT0ooFJJiIhQKyalTp5JEbTYbv9EjaUkCcAEIaML79u2T2dlZeR8IBoPS3d2tX9EZ8klJQYqifA/gUwAlLpcLDx8+REuLIetkxKtXrzA5OQm/349oNIqKigo0NzfD6/WivLzclA3qMqUxdVmt1ng8Hh8Skc+SKShR0ua1N7l165asrKzkXAG/3y89PT2Gnaq/eJ/PKZcL9Hf79m39RmLq8yTDDaBP2807d+6UcDic0+j169elpqbGVIWpqalR5XOBfnft2qXf7X1apFny/tEMDg8P51zFixcvit1uTyGyf/9+OXr0qPrX7XYbnlOeerlW886dO0kdRVFmE/zUTkZN2uXl5TnTTX9/v1RXVycNNTY2ys2bN2V5edkgx99DQ0Pqc02WetTPBvonD12SJz98A4A/5NChQ7KwsJDRwPPnz2XHjh1Jpx0dHfL48eOsTvmccpoO9WknE+ifPBIk4wl+uJvo/+Tq1aspK6IHw1VWVqYa2LRpk4yMjIgZjIyMqPLUo362sNM/eSTCzXbwrgVAMzMQ2TJtsIvJBHYyS0ssRsDZs2fVlGEGPp9PlSeoTzuZQP/kkQB5NZNknUaysbERFgtvpeLFixdYWGAxeoP29vasL6QH5SivgXZoLx3onzyIxM6uIyOHJlBWVsaknlY5HA5jZYX7C6ivr0dVFScF86iqqlL1CNqhvXSgf/LQwZF+2YqMeDye0gDrsX4BSJIFPfm9ZOrUa2trYberKQszMzOYm5vLi9jc3JyqZwbro0mSoUR6QCAQwNoaN1QqGhoaDG/46NGjZPhzgXKU1yPb2PL6NYufkaRfI8kiz/kkEzo7O+FwvPmEBwcHMTo6CjMYHR1V5TUsLi5m3DhcJM5GOizllcwDgYC0t7cnE7PX65X79+9nzZEPHjyQtra2lHp+4MCBtPL0f/jwYX2eHMu7LN64cUNqa2sNpe7y5cspTQl/X7lyJaWG62v5iRMnDItC36dPn9bXbi5eT0ENBp1r9VXvtKWlRTo7O6W1tVVKS0sNz0tKSuTgwYNy4cIFw32HwyG7d+9Wux+9jsViIUmuoq3gVo0v09DQYKpVczqdcunSJVVvenpaDXU2eRL0eDx/A3Dr+0lD08vm00zTy/GCoa6vr0/rrK6uTs6fPy9TU1MGPYaY/WW6l9y4caP09vbOBgKBtqzjQ3V1tTo+6GpoVoiImr6ePn2K+fl59XSjqakJmzdvzlhmiVgspuowq7B0ejwebNu2jY++AvCdwUG6Qayrq6too2wO/CIiH5geaTlqFnukXYc/ReSTvA8HOLy/pxX9V0TOFHzMsnfvXvVYpMgEz731gVVlZaU6n/DAqQghPlPQqVqmo7+mpiY1feR79Jdlk6R8g0U9RHW5XHA6neqzHJgAMAzgBwDBXMI5j4KLcRyNNxc3Z78Z/6Y6c87tIvI1gA8BnAPAA/rsIcC7Q17jAyuaiAyKyEeJf4t8CeBHAOMAeFjP0fid439gFFvqaYx3JQAAAABJRU5ErkJggg==" class="nav-icon-img" alt="Contact">
+      </a>
+    </nav>
+  </header>
+
+  <!-- Main Content Layout -->
+  <!-- Container for Home Page -->
+  <main id="home-view" class="home-container">
+
+    <div class="home-categories">
+      <a href="#graphic-design" class="home-cat-card" id="icon-graphic">
+        <img src="./assets/graphic-design-C_OtdY_z.png" alt="Graphic Design" class="home-cat-img" />
+        <span class="home-cat-label">Graphic<br>Design</span>
+      </a>
+      <a href="#drawing-painting" class="home-cat-card" id="icon-draw">
+        <img src="./assets/drawpaint-C0W4CrEp.png" alt="Drawing & Painting" class="home-cat-img" />
+        <span class="home-cat-label">Drawing &<br>Painting</span>
+      </a>
+      <a href="#digital-work" class="home-cat-card" id="icon-digital">
+        <img src="./assets/digital_work-CmbvZH1U.png" alt="Digital Work" class="home-cat-img" />
+        <span class="home-cat-label">Digital<br>Work</span>
+      </a>
+      <a href="#phony-intellect" class="home-cat-card" id="icon-phony">
+        <img src="./assets/phony_intellect-CrVXnudc.png" alt="Phony Intellect" class="home-cat-img" />
+        <span class="home-cat-label">Phony<br>Intellect</span>
+      </a>
+      <a href="#3d-fabrication" class="home-cat-card" id="icon-3d">
+        <img src="./assets/3d_fabrication-T4As3pG0.png" alt="3D & Fabrication" class="home-cat-img" />
+        <span class="home-cat-label">3D &<br>Fabrication</span>
+      </a>
+    </div>
+
+    <div class="home-hero">
+      <p class="home-eyebrow">The Art Portfolio of</p>
+      <img src="./assets/signature-BU5EIMTb.jpg" alt="Rob Atkinson" class="home-signature">
+      <div class="home-divider"></div>
+      <p class="home-bio">A multi-disciplinary artist working across graphic design, digital painting, traditional drawing &amp; painting, 3D fabrication, and AI-generated imagery &mdash; years of creative exploration in one place.</p>
+    </div>
+
+  </main>
+
+  <!-- Container for Drawing & Painting (Modern Gallery) -->
+  <main id="drawpaint-view" class="home-container" style="display: none; overflow-y: auto; background-color: #f8f9fa;">
+    <a href="#home" class="back-arrow" style="color: #3b42a2; position: fixed; top: 75px; left: 30px;"
+      title="Back to Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+
+    <div class="modern-header" style="text-align: center; padding: 60px 20px 40px; margin-top: 40px;">
+      <h2
+        style="font-weight: 900; color: #3b42a2; font-size: 3rem; letter-spacing: -0.01em; text-transform: uppercase;">
+        Drawing & Painting</h2>
+      <p style="color: #666; font-size: 1.4rem; margin-top: 10px;">Sketches, portraits, lino-cuts and pencil drawings
+        done over the
+        last few years.</p>
+    </div>
+
+    <div class="modern-gallery-grid" id="drawpaint-grid">
+      <!-- Gallery cards injected here -->
+    </div>
+  </main>
+
+  <!-- Container for Graphic Design (Modern Gallery) -->
+  <main id="graphic-design-view" class="home-container"
+    style="display: none; overflow-y: auto; background-color: #f8f9fa;">
+    <a href="#home" class="back-arrow" style="color: #3b42a2; position: fixed; top: 75px; left: 30px;"
+      title="Back to Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+
+    <div class="modern-header" style="text-align: center; padding: 60px 20px 40px; margin-top: 40px;">
+      <h2
+        style="font-weight: 900; color: #3b42a2; font-size: 3rem; letter-spacing: -0.01em; text-transform: uppercase;">
+        Graphic Design</h2>
+      <p style="color: #666; font-size: 1.4rem; margin-top: 10px;">Brand designs, logos vector art and digital
+        designs for companies.</p>
+    </div>
+
+    <div class="modern-gallery-grid" id="graphic-design-grid">
+      <!-- Modern gallery cards injected here -->
+    </div>
+  </main>
+
+  <!-- Container for Digital Work (Modern Gallery) -->
+  <main id="digital-work-view" class="home-container"
+    style="display: none; overflow-y: auto; background-color: #f8f9fa;">
+    <a href="#home" class="back-arrow" style="color: #3b42a2; position: fixed; top: 75px; left: 30px;"
+      title="Back to Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+
+    <div class="modern-header" style="text-align: center; padding: 60px 20px 40px; margin-top: 40px;">
+      <h2
+        style="font-weight: 900; color: #3b42a2; font-size: 3rem; letter-spacing: -0.01em; text-transform: uppercase;">
+        Digital Work</h2>
+      <p style="color: #666; font-size: 1.4rem; margin-top: 10px;">Digital paintings, illustrations, and concept art
+        created using digital tools.</p>
+    </div>
+
+    <div class="modern-gallery-grid" id="digital-work-grid">
+      <!-- Digital Work gallery cards injected here -->
+    </div>
+  </main>
+
+  <!-- Container for Phony Intellect (Modern Gallery) -->
+  <main id="phony-intellect-view" class="home-container"
+    style="display: none; overflow-y: auto; background-color: #f8f9fa;">
+    <a href="#home" class="back-arrow" style="color: #3b42a2; position: fixed; top: 75px; left: 30px;"
+      title="Back to Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+
+    <div class="modern-header" style="text-align: center; padding: 60px 20px 40px; margin-top: 40px;">
+      <h2
+        style="font-weight: 900; color: #3b42a2; font-size: 3rem; letter-spacing: -0.01em; text-transform: uppercase;">
+        Phony Intellect</h2>
+      <p
+        style="color: #666; font-size: 1.4rem; margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+        I've generated over 120 thousand AI images, </p>
+      <p
+        style="font-weight: 900; color: #666; font-size: 1.4rem; margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+        YES! &nbsp; 120,000 AI images.</p>
+      <p
+        style="color: #666; font-size: 1.4rem; margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+        So, it was impossible to pick which ones I thought were the best, so I just picked some I liked. I hope you do
+        too.</p>
+    </div>
+
+    <div class="modern-gallery-grid" id="phony-intellect-grid">
+      <!-- Phony Intellect gallery cards injected here -->
+    </div>
+  </main>
+
+  <!-- Container for 3D & Fabrication (Modern Gallery) -->
+  <main id="3d-fabrication-view" class="home-container"
+    style="display: none; overflow-y: auto; background-color: #f8f9fa;">
+    <a href="#home" class="back-arrow" style="color: #3b42a2; position: fixed; top: 75px; left: 30px;"
+      title="Back to Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+    <div class="modern-header" style="text-align: center; padding: 60px 20px 40px; margin-top: 40px;">
+      <h2
+        style="font-weight: 900; color: #3b42a2; font-size: 3rem; letter-spacing: -0.01em; text-transform: uppercase;">
+        3D &amp; Fabrication</h2>
+      <p style="color: #666; font-size: 1.4rem; margin-top: 10px;">3D modelling, rendering, and fabricated work.</p>
+    </div>
+    <div class="modern-gallery-grid" id="3d-fabrication-grid">
+      <!-- 3D & Fabrication gallery cards injected here -->
+    </div>
+  </main>
+
+  <!-- Lightbox for enlarged images -->
+  <div id="lightbox">
+    <button id="prev-btn" class="lightbox-nav">&lt;</button>
+    <img src="" alt="Enlarged" id="lightbox-img">
+    <button id="next-btn" class="lightbox-nav">&gt;</button>
+  </div>
+
+  <!-- Container for About (Blank for now) -->
+  <main id="about-view" class="home-container" style="display: none; overflow-y: auto;">
+    <a href="#home" class="back-arrow" title="Back to Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+    <div class="about-shell" style="padding: 100px; text-align: center;">
+      <h2 class="about-title" style="font-weight: 900; color: #3b42a2; font-size: 3rem;">ABOUT</h2>
+      <p class="about-intro" style="color: #666; font-size: 1.35rem; font-weight: 700; line-height: 1.6; max-width: 900px; margin: 18px auto 0;">
+        To keep things interesting, I posted 2 versions of my bio.<br>
+        One is Accurate. One is embellished a tiny bit.<br>
+        <span style="text-decoration: underline;">VOTE</span> for the one you think is the accurate version.
+      </p>
+      <p class="about-hint" style="color: #1d8f47; font-size: 1.08rem; font-style: italic; font-weight: 700; line-height: 1.5; max-width: 900px; margin: 14px auto 0;">
+        **HINT** The answer is cleverly hidden in the details.
+      </p>
+      <div class="bio-vote-widget" aria-label="Vote for your favorite bio version">
+        <div class="bio-vote-option">
+          <button class="bio-vote-button bio-vote-left" type="button" data-vote="left">
+            Vote Bio #1
+          </button>
+          <p class="bio-side-count bio-side-count-left" id="bio-left-count">551 Votes</p>
+        </div>
+        <div class="bio-vote-meter-wrap">
+          <div class="bio-vote-meter" id="bio-vote-meter" aria-hidden="true">
+            <span id="bio-vote-percent">50%</span>
+          </div>
+          <p class="bio-vote-count" id="bio-vote-count">934 total votes</p>
+        </div>
+        <div class="bio-vote-option">
+          <button class="bio-vote-button bio-vote-right" type="button" data-vote="right">
+            Vote Bio #2
+          </button>
+          <p class="bio-side-count bio-side-count-right" id="bio-right-count">383 Votes</p>
+        </div>
+      </div>
+      <div class="about-bio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 48px; max-width: 1000px; margin: 56px auto 0; text-align: left;">
+        <section>
+          <h3 class="about-bio-title" style="font-weight: 900; color: #000000; font-size: 2rem; margin: 0 0 14px; text-align: center;">Bio #1</h3>
+          <hr style="border: 0; border-top: 2px solid #000000; margin: 28px 0 0;">
+          <div class="about-bio-copy" style="margin-top: 28px; color: #444; font-size: 1.05rem; line-height: 1.65;">
+            <p style="margin: 0 0 24px;">
+              Robert Atkinson is an artist living in Albuquerque, New Mexico, blending traditional mediums like drawing and painting with digital tools and the evolving power of Artificial Intelligence. Every tool and process he uses complements and builds on the other, sometimes blending them seamlessly together.
+            </p>
+            <p style="margin: 0 0 24px;">
+              With experience providing graphic design services across a wide range of business needs, as well as commissioned murals, paintings, and physical art pieces, he now focuses on helping new startups build memorable and meaningful brands. He works with emerging companies to establish strong visual identities from the beginning, creating consistent brand systems that carry across every customer touchpoint. By developing unified branding early and supporting it with ongoing on-brand messaging, he helps companies build trust, strengthen their reputation, and grow with confidence.
+            </p>
+            <p style="margin: 0 0 24px;">
+              His personal art style is evolving as he begins tp implement vibe coding, agentic AI,, new media platforms and automated systems into his work. Now, he can build immersive, interactive experiences that allow people to engage personally with his art, rather than simply look at it.
+            </p>
+            <p style="margin: 0 0 24px;">
+              With these tools, whole new dimensions are possible. large themes sculptures begin to have two way conversations, murals become animated, and paintings become puzzles people can solve in real time.
+            </p>
+            <p style="margin: 0;">
+              Robert is inspired by the possibility these tools make possible, and he is driven to develop new artforms that have never before been possible on Planet Earth.
+            </p>
+          </div>
+        </section>
+        <section>
+          <h3 class="about-bio-title" style="font-weight: 900; color: #000000; font-size: 2rem; margin: 0 0 14px; text-align: center;">Bio #2</h3>
+          <hr style="border: 0; border-top: 2px solid #000000; margin: 28px 0 0;">
+          <div class="about-bio-copy" style="margin-top: 28px; color: #444; font-size: 1.05rem; line-height: 1.65;">
+            <p style="margin: 0 0 24px;">
+              Robert Atkinson is an artist living in Albuquerque, New Mexico, blending traditional mediums like drawing and painting with digital tools and the evolving power of Artificial Intelligence. Every tool and process he uses compliments and builds on the others, sometimes blending them seamlessly together.
+            </p>
+            <p style="margin: 0 0 24px;">
+              But those are not the things he is known for&hellip;
+            </p>
+            <p style="margin: 0 0 24px;">
+              In 2019, disturbed by a rise in &quot;Karen&quot; videos being posted on social media, he founded a non-profit organization to discover and turn off the gene that is responsible for one&rsquo;s urge to complain aloud in public. This was a feat that was recognized globally, reminding the World&rsquo;s population that solutions are out there to be discovered. He had reoriented Earth toward a more peaceful planet, and in 2022, it earned him a second Nobel Peace Prize nomination. Honored by the nod, he felt the competition wasn&rsquo;t fair to his co-laureates, and voluntarily resigned from consideration. In a later interview he would say, &ldquo;What am I gonna do with two of those things?&rdquo; Then he vanished into thin air.
+            </p>
+            <p style="margin: 0 0 24px;">
+              This is not to say everything he is involved in is an altruistic and selfless pursuit. He makes billions from his many companies that develop things like:
+            </p>
+            <ul style="padding-left: 22px; margin: 0 0 18px;">
+              <li>Transdermal patches that makes your kids smarter</li>
+              <li>Nanobots that are injected in a person&rsquo;s arm and it instantly restores their hope in humanity</li>
+              <li>A digital pulsing bracelet that makes it impossible to be grumpy</li>
+              <li>Human teleportation (details still not published)</li>
+              <li>A radio signal that summons alien craft</li>
+              <li>And a stem cell technology that stops bad posture in alpacas.</li>
+            </ul>
+            <p style="margin: 0 0 24px;">
+              Somehow, with an unimaginably packed schedule, he still finds time to enjoy his hobbies:
+            </p>
+            <ul style="padding-left: 22px; margin: 0 0 18px;">
+              <li>Playing the cello in the London Symphony Orchestra and at senior citizen&rsquo;s birthday parties,</li>
+              <li>Donating time to improve the paintings at the Sistine Chapel</li>
+              <li>Being Elon&rsquo;s personal tutor, explaining some of the more technical aspects of rocket propulsion</li>
+              <li>And training his three Irish Setters how to knit winter caps for a local homeless shelter.</li>
+            </ul>
+            <p style="margin: 0 0 24px;">
+              Some say he is a genius. Some say he represents the Human Race&rsquo;s next evolutionary step. Still others say they feel he is sent as a gift from a superior race to bring human beings closer together. No one could possibly know who or what he actually is, we just know we&rsquo;re grateful for his contributions to society.
+            </p>
+            <p style="margin: 0 0 24px;">
+              When he was asked, &ldquo;Robert, your accomplishments are astonishing! Do these things come easy to you?&rdquo;
+            </p>
+            <p style="margin: 0;">
+              He simply replied, &ldquo;Um&hellip;Sorta.&rdquo; Then he vanished from sight.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Container for Blog -->
+  <main id="blog-view" class="home-container" style="display: none; overflow-y: auto; background-color: #f8f9fa;">
+    <a href="#home" class="back-arrow" title="Back to Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+    <div class="blog-shell">
+      <header class="blog-header">
+        <h2>BLOG</h2>
+        <p class="blog-coming-soon">Coming Soon!</p>
+        <div class="blog-controls" id="blog-controls">
+          <input id="blog-search" class="blog-search" type="search" placeholder="Search posts">
+          <div id="blog-categories" class="blog-categories" aria-label="Blog categories"></div>
+        </div>
+      </header>
+      <div id="blog-status" class="blog-status">Loading posts...</div>
+      <div id="blog-list" class="blog-list"></div>
+      <article id="blog-detail" class="blog-detail" style="display: none;"></article>
+    </div>
+  </main>
+
+  <!-- Container for Contact -->
+  <main id="contact-view" class="home-container" style="display: none; overflow-y: auto; background-color: #f8f9fa;">
+    <a href="#home" class="back-arrow" style="color: #3b42a2; position: fixed; top: 75px; left: 30px;" title="Back to Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+    <div style="max-width: 640px; margin: 0 auto; padding: 100px 30px 80px;">
+      <h2 style="font-weight: 900; color: #3b42a2; font-size: 3rem; text-transform: uppercase; text-align: center;">Contact</h2>
+      <p style="color: #666; font-size: 1.4rem; margin-top: 14px; line-height: 1.6; text-align: center;">I always want to hear from people about&hellip;well&hellip;anything really. If you have a question or comment for me, fill out the form below and I'll get back to you.</p>
+
+      <form id="contact-form" action="https://formspree.io/f/mzdoreno" method="POST" style="margin-top: 40px;">
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-weight: 700; color: #3b42a2; font-size: 1rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Full Name?</label>
+          <input type="text" name="name" required placeholder="Your name"
+            style="width: 100%; padding: 14px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; background: #fff; box-sizing: border-box; transition: border-color 0.2s;"
+            onfocus="this.style.borderColor='#3b42a2'" onblur="this.style.borderColor='#ddd'">
+        </div>
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-weight: 700; color: #3b42a2; font-size: 1rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Email</label>
+          <input type="email" name="email" required placeholder="your@email.com"
+            style="width: 100%; padding: 14px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; background: #fff; box-sizing: border-box; transition: border-color 0.2s;"
+            onfocus="this.style.borderColor='#3b42a2'" onblur="this.style.borderColor='#ddd'">
+        </div>
+        <div style="margin-bottom: 32px;">
+          <label style="display: block; font-weight: 700; color: #3b42a2; font-size: 1rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">What's on your mind?</label>
+          <textarea name="message" required placeholder="Tell me anything..." rows="6"
+            style="width: 100%; padding: 14px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; background: #fff; box-sizing: border-box; resize: vertical; transition: border-color 0.2s;"
+            onfocus="this.style.borderColor='#3b42a2'" onblur="this.style.borderColor='#ddd'"></textarea>
+        </div>
+        <div style="margin-bottom: 32px;">
+          <label style="display: block; font-weight: 700; color: #3b42a2; font-size: 1rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Your File</label>
+          <input type="file" name="upload"
+            style="width: 100%; padding: 14px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; background: #fff; box-sizing: border-box; cursor: pointer;">
+        </div>
+        <input type="hidden" name="_subject" value="website form filled out">
+        <input type="hidden" name="_next" value="thanks.html">
+        <button type="submit"
+          style="width: 100%; padding: 16px; background: #3b42a2; color: #fff; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; font-family: inherit; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; transition: background 0.2s;"
+          onmouseover="this.style.background='#2d3380'" onmouseout="this.style.background='#3b42a2'">Send it</button>
+        <div id="form-status" style="margin-top: 16px; text-align: center; font-size: 1rem; color: #3b42a2; display: none;"></div>
+      </form>
+
+      <p style="color: #999; font-size: 1.1rem; margin-top: 40px; line-height: 1.6; text-align: center;">If you need to get ahold of me right away you can always hit me up on <strong style="color: #3b42a2;">Messenger</strong>.</p>
+    </div>
+  </main>
+
+
+</body>
+
+</html>
