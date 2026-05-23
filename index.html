@@ -344,7 +344,48 @@
       <!-- 3D & Fabrication gallery cards injected here -->
     </div>
   </main>
+// 3D & Fabrication Gallery Logic
+    const fabricationItems = [
+      { src: './3d-fab/blood fountain1.jpg', caption: 'Blood Fountain 1' },
+      { src: './3d-fab/Bloodfountain2.jpg', caption: 'Blood Fountain 2' },
+      { src: './3d-fab/Bloodfountain3.jpg.jpg', caption: 'Blood Fountain 3' },
+      { src: './3d-fab/Carrousel Horse.png', caption: 'Carousel Horse' },
+      { src: './3d-fab/frinch sign 2.png', caption: 'Grinch Sign 2' },
+      { src: '/3d-fab/Gargoyle.jpg', caption: 'Gargoyle' },
+      { src: '/3d-fab/Grinch Cave1.png', caption: 'Grinch Cave 1' },
+      { src: '/3d-fab/grinch rock.png', caption: 'Grinch Rock' },
+      { src: '/3d-fab/grinch sign1.png', caption: 'Grinch Sign 1' },
+      { src: '/3d-fab/Grinvh cave2.png', caption: 'Grinch Cave 2' },
+      { src: '/3d-fab/han-solo-carvonite-replica.jfif', caption: 'Han Solo Carbonite Replica' }
+    ];
 
+    function init3dFabricationGallery() {
+      const grid = document.getElementById('3d-fabrication-grid');
+      grid.innerHTML = '';
+
+      fabricationItems.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'gallery-card';
+        card.style.animationDelay = `${(index % 15) * 0.05}s`;
+
+        card.innerHTML = `
+          <div style="overflow: hidden; width: 100%; height: 100%;">
+            <img src="${item.src}" alt="${item.caption}" loading="lazy">
+          </div>
+          <div class="card-info">
+            <div class="card-title">${item.caption}</div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          window.currentActiveGallery = fabricationItems;
+          currentImageIndex = index;
+          openLightbox(index);
+        });
+
+        grid.appendChild(card);
+      });
+    }
   <!-- Lightbox for enlarged images -->
   <div id="lightbox">
     <button id="prev-btn" class="lightbox-nav">&lt;</button>
